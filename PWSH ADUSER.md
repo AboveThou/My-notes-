@@ -30,6 +30,7 @@ scp 'Full\File\Path' andy.dwyer@10.10.0.2:C:\
 ```
 Then RDP into YOUR ADMIN IP, and look for the file
 
+
 Finding a user with only part of their name
 ```ps1
 Get-ADUser -Filter "samaccountname -like 'Tiffany*'"
