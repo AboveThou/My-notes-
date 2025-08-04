@@ -1,25 +1,35 @@
+
 To find account in AD that uses ReversibleEncryption
+````powershell
 Get-ADUser -Filter 'AllowReversibleEncryption -eq $true' -properties AllowReversibleEncryption
-
+````
 Finding accounts where Password never expires neatly
+`````powershell
 Get-ADUser -filter {PasswordNeverExpires -eq $true} -properties PasswordNeverExpires | Select-Object Name, SamAccountName, PasswordNeverExpires
-
+````
 Finding account Descriptions
+````powershell
 Get-ADUser -filter * -Properties Description | Select-Object Name, Description
-
+````
 View all files on something like a share for ex
+````powershell
 Get-ChildItem -Recurse -File -Force
-
+````
 Finding RID of a user
+````powershell
 Get-ADUser -Identity 'krbtgt' -Properties Description
-
+````
 Finding based on a phone number
+````powershell
 Get-ADUser -filter * -properties TelephoneNumber | where Telephonenumber -match "336-6754"
-
+`````
 SCP from a share 
+````powershell
 scp 'Full\File\Path' andy.dwyer@10.10.0.2:C:\
+````
 Then RDP into YOUR ADMIN IP, and look for the file
 
 Finding a user with only part of their name
+````powershell
 Get-ADUser -Filter "samaccountname -like 'Tiffany*'"
-
+````
