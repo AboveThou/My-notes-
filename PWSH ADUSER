@@ -1,10 +1,10 @@
 
 To find account in AD that uses ReversibleEncryption
-````powershell
+```ps1
 Get-ADUser -Filter 'AllowReversibleEncryption -eq $true' -properties AllowReversibleEncryption
-````
+```
 Finding accounts where Password never expires neatly
-`````powershell
+```ps1
 Get-ADUser -filter {PasswordNeverExpires -eq $true} -properties PasswordNeverExpires | Select-Object Name, SamAccountName, PasswordNeverExpires
 ````
 Finding account Descriptions
